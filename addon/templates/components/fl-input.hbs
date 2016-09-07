@@ -1,0 +1,49 @@
+<fieldset>
+   {{#if hasBlock}}
+       {{yield}}
+       {{#if label}}
+           <label class="control-label">{{label}}</label>
+       {{/if}}
+   {{else}}
+       {{input
+           readonly=readonly
+           size=size
+           name=name
+           pattern=pattern
+           autosave=autosave
+           formmethod=formmethod
+           height=height
+           step=step
+           selectionDirection=selectionDirection
+           required=required
+           tabindex=tabindex
+           min=min
+           accept=accept
+           formaction=formaction
+           formnovalidate=formnovalidate
+           inputmode=inputmode
+           width=width
+           spellcheck=spellcheck
+           autofocus=autofocus
+           disabled=disabled
+           maxlength=maxlength
+           max=max
+           autocomplete=autocomplete
+           formenctype=formenctype
+           formtarget=formtarget
+           multiple=multiple
+           form=form
+           type=type
+           value=(mut value)
+           class=textClass
+           enter="enter"
+           insert-newline="insertLine"
+           escape-press="escapePress"
+           key-press="keyPress"
+           key-up="keyUp"
+       }}
+       {{#if label}}
+           <label class="control-label">{{label}}</label>
+       {{/if}}
+   {{/if}}
+</fieldset>

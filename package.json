@@ -1,7 +1,7 @@
 {
-  "name": "fl-input",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "name": "gavant-fl-input",
+  "version": "0.0.1",
+  "description": "This component is a floating label input. It floats a label ontop of the input to be the placeholder, then animates it to the top of the input when the placeholder should no longer be there.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,7 +11,10 @@
     "start": "ember server",
     "test": "ember try:each"
   },
-  "repository": "",
+  "repository": {
+      "type": "git",
+      "url": "git@repo.gavant.com:ember-addon/fl-input.git"
+  },
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -23,7 +26,6 @@
     "ember-cli": "2.6.1",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-dependency-checker": "^1.2.0",
-    "ember-cli-htmlbars": "^1.0.3",
     "ember-cli-htmlbars-inline-precompile": "^0.3.1",
     "ember-cli-inject-live-reload": "^1.4.0",
     "ember-cli-jshint": "^1.0.0",
@@ -43,9 +45,13 @@
     "ember-addon"
   ],
   "dependencies": {
-    "ember-cli-babel": "^5.1.6"
+    "ember-cli-babel": "^5.1.6",
+    "ember-cli-htmlbars": "^1.0.3"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "publishConfig": {
+    "registry": "http://artifactory.gavant.com/artifactory/api/npm/npm-local"
   }
 }
