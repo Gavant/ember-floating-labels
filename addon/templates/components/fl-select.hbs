@@ -1,0 +1,21 @@
+<fieldset>
+    {{#if hasBlock}}
+        <select class=selectClass onchange={{action "onChange" value="target.value"}}>
+            <option value="" class="placeholder-option">{{placeholderOptionText}}</option>
+            {{yield}}
+        </select>
+        {{#if label}}
+            <label class="control-label">{{label}}</label>
+        {{/if}}
+    {{else}}
+        <select class={{selectClass}} onchange={{action "onChange" value="target.value"}}>
+            <option value="" class="placeholder-option">{{placeholderOptionText}}</option>
+            {{#each options as |opt|}}
+                <option value={{get opt "valuePath"}} selected={{eq opt value}}>{{get opt "labelPath"}}</option>
+            {{/each}}
+        </select>
+        {{#if label}}
+            <label class="control-label">{{label}}</label>
+        {{/if}}
+    {{/if}}
+</fieldset>

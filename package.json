@@ -12,8 +12,8 @@
     "test": "ember try:each"
   },
   "repository": {
-      "type": "git",
-      "url": "git@repo.gavant.com:ember-addon/fl-input.git"
+    "type": "git",
+    "url": "git@repo.gavant.com:ember-addon/fl-input.git"
   },
   "engines": {
     "node": ">= 0.10.0"
@@ -38,7 +38,6 @@
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
-    "ember-welcome-page": "^1.0.1",
     "loader.js": "^4.0.1"
   },
   "keywords": [
@@ -46,7 +45,8 @@
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.6",
-    "ember-cli-htmlbars": "^1.0.3"
+    "ember-cli-htmlbars": "^1.0.3",
+    "ember-truth-helpers": "^1.2.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
