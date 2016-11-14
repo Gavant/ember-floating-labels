@@ -1,5 +1,5 @@
 import Ember from 'ember';
-const { isEmpty, computed } = Ember;
+const { isEmpty, computed, canInvoke } = Ember;
 
 export default Ember.Mixin.create({
     classNames: ['floating-label'],
@@ -22,14 +22,14 @@ export default Ember.Mixin.create({
     },
     focusIn () {
         this.set('_focus', true);
-        if (this.attrs['focus-in']) {
+        if (canInvoke(this.attrs, 'focus-in')) {
             this.attrs['focus-in'](...arguments);
         }
         return true;
     },
     focusOut () {
         this.set('_focus', false);
-        if (this.attrs['focus-out']) {
+        if (canInvoke(this.attrs, 'focus-out')) {
             this.attrs['focus-out'](...arguments);
         }
         return true;

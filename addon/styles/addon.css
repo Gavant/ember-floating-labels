@@ -2,8 +2,14 @@
     position: relative;
 }
 
-.floating-label input {
+.floating-label input,
+.floating-label select {
     padding: 0.94em 12px;
+}
+
+.floating-label select {
+    -webkit-appearance:none;
+    -moz-appearance:none;
 }
 
 .floating-label.has-focus .control-label,
@@ -20,6 +26,50 @@
 .floating-label.has-content input {
     padding-top: 1.5em;
     padding-bottom: 0.38em;
+}
+
+.floating-label.has-focus select,
+.floating-label.has-content select {
+    padding-top: 0.7em;
+    padding-bottom: 0;
+}
+
+.floating-label.has-focus select.input-lg,
+.floating-label.has-content select.input-lg {
+    padding-top: 0.4em;
+}
+
+/* only show custom indicator arrow in webkit/firefox */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .floating-label-select:after {
+        content: "\2304";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        bottom: 0;
+        margin-top: -16px;
+        font-size: 32px;
+        line-height: 32px;
+        padding: 0 8px;
+        color: #aaa;
+        pointer-events: none;
+    }
+}
+
+@-moz-document url-prefix() {
+    .floating-label-select:after {
+        content: "\2304";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        bottom: 0;
+        margin-top: -16px;
+        font-size: 20px;
+        line-height: 32px;
+        padding: 0 8px;
+        color: #aaa;
+        pointer-events: none;
+    }
 }
 
 .floating-label .control-label {

@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import FloatingLabelMixin from 'gavant-fl-input/mixins/floating-label';
+import FloatingLabelMixin from 'fl-input/mixins/floating-label';
 import { module, test } from 'qunit';
 
 module('Unit | Mixin | floating label');
