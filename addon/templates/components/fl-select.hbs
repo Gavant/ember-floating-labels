@@ -1,0 +1,15 @@
+<fieldset>
+    <select class={{selectClass}} onchange={{action "onChange" value="target.value"}}>
+        <option value="" disabled={{disableEmptyOption}}>{{if showEmptyOptionText emptyOptionText}}</option>
+        {{#if hasBlock}}
+            {{yield this}}
+        {{else}}
+            {{#each options as |opt|}}
+                <option value={{get opt valuePath}} selected={{eq (get opt valuePath) value}}>{{get opt labelPath}}</option>
+            {{/each}}
+        {{/if}}
+    </select>
+    {{#if label}}
+        <label class="control-label">{{label}}</label>
+    {{/if}}
+</fieldset>
