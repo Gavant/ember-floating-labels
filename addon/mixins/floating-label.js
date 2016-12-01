@@ -9,7 +9,7 @@ export default Ember.Mixin.create({
         return this._hasContent(this.get('value'));
     }),
     hasFocus: computed('hasContent', 'disabled', '_focus', function() {
-        return (this.get('hasContent') || this.get('disabled') || this.get('_focus'));
+        return (this.get('hasContent') || this.get('_focus'));
     }),
     label: computed('placeholder', function() {
         return this.get('placeholder');

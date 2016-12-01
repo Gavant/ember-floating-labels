@@ -16,6 +16,9 @@
             <div class="form-group">
                 {{fl-input value=inputSmValue placeholder="Small Input" textClass="form-control input-sm"}}
             </div>
+            <div class="form-group">
+                {{fl-input value=inputSmValue placeholder="Small Input" textClass="form-control input-sm" disabled=true}}
+            </div>
         </div>
     </div>
     <h1>Floating Label - Select</h1>
@@ -29,6 +32,17 @@
                     selectClass="form-control"
                     emptyOptionText="Select a fruit..."
                     onchange=(action (mut selectInlineValue))
+                }}
+            </div>
+            <div class="form-group">
+                {{fl-select
+                    options=inlineSelectOptions
+                    value=selectInlineValue
+                    placeholder="Inline Version"
+                    selectClass="form-control"
+                    emptyOptionText="Select a fruit..."
+                    onchange=(action (mut selectInlineValue))
+                    disabled=true
                 }}
             </div>
             <div class="form-group">

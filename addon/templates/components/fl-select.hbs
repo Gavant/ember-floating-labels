@@ -1,5 +1,5 @@
 <fieldset>
-    <select class={{selectClass}} onchange={{action "onChange" value="target.value"}}>
+    <select disabled={{disabled}} class={{selectClass}} onchange={{action "onChange" value="target.value"}}>
         <option value="" disabled={{disableEmptyOption}}>{{if showEmptyOptionText emptyOptionText}}</option>
         {{#if hasBlock}}
             {{yield this}}

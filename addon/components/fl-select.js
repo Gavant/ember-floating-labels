@@ -10,6 +10,7 @@ export default Ember.Component.extend(FloatingLabelMixin, {
     valuePath: "value",
     labelPath: "label",
     emptyOptionText: "",
+    disabled: null,
     allowClear: true,
     showEmptyOptionText: computed.alias('_focus'),
     disableEmptyOption: computed.not('allowClear'),
