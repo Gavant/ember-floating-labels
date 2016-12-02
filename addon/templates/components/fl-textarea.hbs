@@ -5,7 +5,10 @@
            <label class="control-label">{{label}}</label>
        {{/if}}
    {{else}}
-       {{input
+       {{textarea
+           rows=rows
+           cols=cols
+           wrap=wrap
            readonly=readonly
            size=size
            name=name
@@ -34,7 +37,6 @@
            formtarget=formtarget
            multiple=multiple
            form=form
-           type=type
            value=(mut value)
            class=textClass
            enter="enter"

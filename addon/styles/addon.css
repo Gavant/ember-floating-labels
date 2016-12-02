@@ -12,18 +12,10 @@
     -moz-appearance:none;
 }
 
-.floating-label.has-focus .control-label,
-.floating-label.has-content .control-label {
-    top: 5px;
-    margin-top: 0;
-    opacity: 1;
-    transform: scale(.75);
-    -moz-transform: scale(.75);
-    -webkit-transform: perspective(1px) scale(.75);
-}
-
 .floating-label.has-focus input,
-.floating-label.has-content input {
+.floating-label.has-focus textarea,
+.floating-label.has-content input,
+.floating-label.has-content textarea {
     padding-top: 1.5em;
     padding-bottom: 0.38em;
 }
@@ -89,6 +81,21 @@
     transform-origin: left top 0;
     pointer-events: none;
     opacity: 0.6;
+}
+
+.floating-label.floating-label-textarea .control-label {
+    top: 12px;
+    margin-top: 0;
+}
+
+.floating-label.has-focus .control-label,
+.floating-label.has-content .control-label {
+    top: 5px;
+    margin-top: 0;
+    opacity: 1;
+    transform: scale(.75);
+    -moz-transform: scale(.75);
+    -webkit-transform: perspective(1px) scale(.75);
 }
 
 /* Webkit */
