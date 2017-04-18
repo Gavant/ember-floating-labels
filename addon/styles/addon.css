@@ -8,6 +8,7 @@
 }
 
 .floating-label select {
+    padding-right: 16px;
     -webkit-appearance:none;
     -moz-appearance:none;
 }
@@ -34,32 +35,36 @@
 /* only show custom indicator arrow in webkit/firefox */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     .floating-label-select:after {
-        content: "\2304";
+        content: " ";
         position: absolute;
-        top: 50%;
-        right: 0;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        top: 0;
         bottom: 0;
-        margin-top: -16px;
-        font-size: 32px;
-        line-height: 32px;
-        padding: 0 8px;
-        color: #aaa;
+        right: 8px;
+        margin: auto;
+        border-style: solid;
+        border-width: 7px 4px 0 4px;
+        border-color: #ccc transparent transparent transparent;
         pointer-events: none;
     }
 }
 
 @-moz-document url-prefix() {
     .floating-label-select:after {
-        content: "\2304";
+        content: " ";
         position: absolute;
-        top: 50%;
-        right: 0;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        top: 0;
         bottom: 0;
-        margin-top: -16px;
-        font-size: 20px;
-        line-height: 32px;
-        padding: 0 8px;
-        color: #aaa;
+        right: 8px;
+        margin: auto;
+        border-style: solid;
+        border-width: 7px 4px 0 4px;
+        border-color: #ccc transparent transparent transparent;
         pointer-events: none;
     }
 }
