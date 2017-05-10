@@ -4,7 +4,7 @@ const { isEmpty, computed, canInvoke } = Ember;
 export default Ember.Mixin.create({
     classNames: ['floating-label'],
     classNameBindings: ['hasFocus', 'hasContent'],
-    hasContent: computed('value', function() {
+    hasContent: computed('value', 'value.content.[]', function() {
         this.set('value', this.get('value'));
         return this._hasContent(this.get('value'));
     }),
