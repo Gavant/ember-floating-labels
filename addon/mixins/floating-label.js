@@ -1,11 +1,18 @@
 import Ember from 'ember';
-const { isEmpty, computed, canInvoke } = Ember;
+
+const {
+    isEmpty,
+    computed,
+    canInvoke,
+    run: {
+        scheduleOnce
+    }
+} = Ember;
 
 export default Ember.Mixin.create({
     classNames: ['floating-label'],
     classNameBindings: ['hasFocus', 'hasContent'],
     hasContent: computed('value', 'value.content.[]', function() {
-        this.set('value', this.get('value'));
         return this._hasContent(this.get('value'));
     }),
     hasFocus: computed('hasContent', 'disabled', '_focus', function() {
@@ -21,14 +28,14 @@ export default Ember.Mixin.create({
         return !isEmpty(value);
     },
     focusIn () {
-        this.set('_focus', true);
+        scheduleOnce('afterRender', Ember, 'trySet', this, '_focus', true);
         if (canInvoke(this.attrs, 'focus-in')) {
             this.attrs['focus-in'](...arguments);
         }
         return true;
     },
     focusOut () {
-        this.set('_focus', false);
+        scheduleOnce('afterRender', Ember, 'trySet', this, '_focus', false);
         if (canInvoke(this.attrs, 'focus-out')) {
             this.attrs['focus-out'](...arguments);
         }
