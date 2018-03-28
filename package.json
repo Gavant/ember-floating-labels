@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@repo.gavant.com:ember-addon/fl-input.git"
+    "url": "https://github.com/Gavant/ember-floating-labels.git"
   },
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Gavant Software, Inc.",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.2",
@@ -41,7 +41,11 @@
     "loader.js": "^4.0.1"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "ember",
+    "forms",
+    "inputs",
+    "labels"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.6",
