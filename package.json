@@ -1,7 +1,7 @@
 {
-  "name": "gavant-fl-input",
+  "name": "ember-floating-labels",
   "version": "0.3.2",
-  "description": "This component is a floating label input. It floats a label ontop of the input to be the placeholder, then animates it to the top of the input when the placeholder should no longer be there.",
+  "description": "Animated floating placeholder form labels for Ember apps",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -50,8 +50,5 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  },
-  "publishConfig": {
-    "registry": "http://artifactory.gavant.com/artifactory/api/npm/npm-local"
   }
 }
