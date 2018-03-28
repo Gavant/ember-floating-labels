@@ -1,6 +1,6 @@
-# Fl-input
+# ember-floating-labels
 
-This README outlines the details of collaborating on this Ember addon.
+Animated floating placeholder form labels for Ember apps
 
 ## Installation
 
