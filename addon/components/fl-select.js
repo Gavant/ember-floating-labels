@@ -1,10 +1,11 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import FloatingLabelMixin from '../mixins/floating-label';
 import layout from '../templates/components/fl-select';
+import { tryInvoke } from '@ember/utils';
+import { alias } from '@ember/object/computed';
+import { not } from '@ember/object/computed';
 
-const { canInvoke, computed } = Ember;
-
-export default Ember.Component.extend(FloatingLabelMixin, {
+export default Component.extend(FloatingLabelMixin, {
     layout,
     classNames: ['floating-label-select'],
     valuePath: "value",
@@ -12,14 +13,12 @@ export default Ember.Component.extend(FloatingLabelMixin, {
     emptyOptionText: "",
     disabled: null,
     allowClear: true,
-    showEmptyOptionText: computed.alias('_focus'),
-    disableEmptyOption: computed.not('allowClear'),
+    showEmptyOptionText: alias('_focus'),
+    disableEmptyOption: not('allowClear'),
 
     actions: {
         onChange(value) {
-            if(canInvoke(this.attrs, 'onchange')) {
-                this.attrs.onchange(value);
-            }
+          tryInvoke(this, 'onchange', [value]);
         }
     }
 });

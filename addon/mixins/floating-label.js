@@ -1,15 +1,13 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
 
-const {
-    isEmpty,
-    computed,
-    canInvoke,
-    run: {
-        scheduleOnce
-    }
-} = Ember;
+import { isEmpty, tryInvoke } from '@ember/utils';
+import { computed, trySet } from '@ember/object';
+import { scheduleOnce } from '@ember/runloop';
+import ObjectProxy from '@ember/object/proxy';
+import ArrayProxy from '@ember/array/proxy';
+import { reads } from '@ember/object/computed';
 
-export default Ember.Mixin.create({
+export default Mixin.create({
     classNames: ['floating-label'],
     classNameBindings: ['hasFocus', 'hasContent'],
     hasContent: computed('value', 'value.content.[]', function() {
@@ -18,27 +16,25 @@ export default Ember.Mixin.create({
     hasFocus: computed('hasContent', 'disabled', '_focus', function() {
         return (this.get('hasContent') || this.get('_focus'));
     }),
-    label: computed('placeholder', function() {
-        return this.get('placeholder');
-    }),
+    label: reads('placeholder'),
+
+    _setFocus(value) {
+      trySet(this, '_focus', value);
+    },
     _hasContent(value) {
-        if (value instanceof Ember.ObjectProxy || value instanceof Ember.ArrayProxy) {
+        if (value instanceof ObjectProxy || value instanceof ArrayProxy) {
             return this._hasContent(value.get('content'));
         }
         return !isEmpty(value);
     },
     focusIn () {
-        scheduleOnce('afterRender', Ember, 'trySet', this, '_focus', true);
-        if (canInvoke(this.attrs, 'focus-in')) {
-            this.attrs['focus-in'](...arguments);
-        }
+        scheduleOnce('afterRender', this, '_setFocus', true);
+        tryInvoke(this, 'focus-in', ...arguments);
         return true;
     },
     focusOut () {
-        scheduleOnce('afterRender', Ember, 'trySet', this, '_focus', false);
-        if (canInvoke(this.attrs, 'focus-out')) {
-            this.attrs['focus-out'](...arguments);
-        }
+        scheduleOnce('afterRender', this, '_setFocus', false);
+        tryInvoke(this, 'focus-out', ...arguments);
         return true;
     }
 });
