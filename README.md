@@ -1,8 +1,8 @@
 # ember-floating-labels
 
 Animated floating placeholder form labels for Ember apps.
-Have you ever wanted those slick looking input fields that slide the labels up when you focus on the field? Then this addon is for you!
-Installation
+
+Demo: https://gavant.github.io/ember-floating-labels/
 ------------------------------------------------------------------------------
 
 ```

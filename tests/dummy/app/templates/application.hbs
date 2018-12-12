@@ -1,90 +1,36 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      {{#link-to 'index' class="navbar-brand"}}
+        <img src="https://www.gavant.com/wp-content/uploads/2018/04/logo.png" alt="">
+        <span>Ember Floating Labels</span>
+      {{/link-to}}
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        {{#link-to 'text' tagName="li"}}
+          {{link-to 'Text' 'text'}}
+        {{/link-to}}
+        {{#link-to 'select' tagName="li"}}
+          {{link-to 'Select' 'select'}}
+        {{/link-to}}
+        {{#link-to 'textarea' tagName="li"}}
+          {{link-to 'Text Area' 'textarea'}}
+        {{/link-to}}
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="https://github.com/Gavant/ember-floating-labels"><i class="fab fa-github fa-2x"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 <div class="container">
-    <h1>Floating Label - Input</h1>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                {{fl-input value=inputInlineValue placeholder="Inline Version" textClass="form-control"}}
-            </div>
-            <div class="form-group">
-                {{#fl-input value=inputBlockValue placeholder="Block Version"}}
-                    {{input value=inputBlockValue class="form-control" placeholder="Static Placeholder"}}
-                {{/fl-input}}
-            </div>
-            <div class="form-group">
-                {{fl-input value=inputLgValue placeholder="Large Input" textClass="form-control input-lg"}}
-            </div>
-            <div class="form-group">
-                {{fl-input value=inputSmValue placeholder="Small Input" textClass="form-control input-sm"}}
-            </div>
-            <div class="form-group">
-                {{fl-input value=inputSmValue placeholder="Small Input" textClass="form-control input-sm" disabled=true}}
-            </div>
-        </div>
-    </div>
-    <h1>Floating Label - Select</h1>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                {{fl-select
-                    options=inlineSelectOptions
-                    value=selectInlineValue
-                    placeholder="Inline Version"
-                    selectClass="form-control"
-                    emptyOptionText="Select a fruit..."
-                    onchange=(action (mut selectInlineValue))
-                }}
-            </div>
-            <div class="form-group">
-                {{fl-select
-                    options=inlineSelectOptions
-                    value=selectInlineValue
-                    placeholder="Inline Version"
-                    selectClass="form-control"
-                    emptyOptionText="Select a fruit..."
-                    onchange=(action (mut selectInlineValue))
-                    disabled=true
-                }}
-            </div>
-            <div class="form-group">
-                {{fl-select
-                    options=customSelectOptions
-                    value=selectLgValue
-                    valuePath="abbrv"
-                    labelPath="name"
-                    placeholder="Large Select"
-                    selectClass="form-control input-lg"
-                    allowClear=false
-                    onchange=(action (mut selectLgValue))
-                }}
-            </div>
-            <div class="form-group">
-                {{#fl-select
-                    value=selectBlockValue
-                    placeholder="Block Version"
-                    selectClass="form-control input-lg"
-                    emptyOptionText="Select something..."
-                    onchange=(action (mut selectBlockValue))
-                    as |select|
-                }}
-                    <optgroup label="Custom Group">
-                        <option value="foo" selected={{eq "foo" selectBlockValue}}>Foo</option>
-                        <option value="bar" selected={{eq "bar" selectBlockValue}}>Bar</option>
-                    </optgroup>
-                    <optgroup label="Standard Options">
-                        {{#each inlineSelectOptions as |opt index|}}
-                            <option value={{opt.value}} selected={{eq opt.value selectBlockValue}}>{{index}}. {{opt.label}}</option>
-                        {{/each}}
-                    </optgroup>
-                {{/fl-select}}
-            </div>
-        </div>
-    </div>
-    <h1>Floating Label - Textarea</h1>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                {{fl-textarea value=textareaInlineValue placeholder="Textarea Example" textClass="form-control" rows=10}}
-            </div>
-        </div>
-    </div>
+    {{outlet}}
 </div>

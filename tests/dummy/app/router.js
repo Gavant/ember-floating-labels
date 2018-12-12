@@ -7,6 +7,9 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('text');
+  this.route('select');
+  this.route('textarea');
 });
 
 export default Router;
