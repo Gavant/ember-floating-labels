@@ -2,6 +2,7 @@
 
 .floating-label {
     position: relative;
+    textarea,
     input,
     select {
         padding: $floating-label-padding;
@@ -16,10 +17,12 @@
         input, textarea {
             padding-top: $floating-label-text-focus-padding-top;
             padding-bottom: $floating-label-text-focus-padding-bottom;
+            font-size: $floating-label-input-font-size;
         }
         select {
             padding-top: $floating-label-select-focus-padding-top;
             padding-bottom: $floating-label-select-focus-padding-bottom;
+            font-size: $floating-label-input-font-size;
             &.input-lg {
                 padding-top: $floating-label-select-focus-padding-top - .5rem;
             }
