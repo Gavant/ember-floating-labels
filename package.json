@@ -1,6 +1,6 @@
 {
   "name": "ember-floating-labels",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Animated floating placeholder form labels for Ember apps",
   "keywords": [
     "ember-addon",
