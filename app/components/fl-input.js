@@ -1,1 +1,1 @@
-export { default } from 'fl-input/components/fl-input';
+export { default } from 'ember-floating-labels/components/fl-input';

@@ -1,6 +1,8 @@
-/* jshint node: true */
 'use strict';
 
 module.exports = {
-  name: 'fl-input'
+    name: 'ember-floating-labels',
+    included: function(/* app */) {
+        this._super.included.apply(this, arguments);
+    }
 };

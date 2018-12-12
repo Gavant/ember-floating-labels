@@ -1,1 +1,1 @@
-export { default } from 'fl-input/components/fl-textarea';
+export { default } from 'ember-floating-labels/components/fl-textarea';

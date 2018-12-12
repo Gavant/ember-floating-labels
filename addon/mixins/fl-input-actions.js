@@ -1,33 +1,22 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
+import { tryInvoke } from '@ember/utils';
 
-const { canInvoke } = Ember;
-
-export default Ember.Mixin.create({
+export default Mixin.create({
     actions: {
         enter () {
-            if (canInvoke(this.attrs, 'enter')) {
-                this.attrs.enter(...arguments);
-            }
+          tryInvoke(this, 'enter', ...arguments);
         },
         insertLine () {
-            if (canInvoke(this.attrs, 'insert-newline')) {
-                this.attrs['insert-newline'](...arguments);
-            }
+          tryInvoke(this, 'insert-newline', ...arguments);
         },
         escapePress () {
-            if (canInvoke(this.attrs, 'escape-press')) {
-                this.attrs['escape-press'](...arguments);
-            }
+          tryInvoke(this, 'escape-press', ...arguments);
         },
         keyPress () {
-            if (canInvoke(this.attrs, 'key-press')) {
-                this.attrs['key-press'](...arguments);
-            }
+          tryInvoke(this, 'key-press', ...arguments);
         },
         keyUp () {
-            if (canInvoke(this.attrs, 'key-up')) {
-                this.attrs['key-up'](...arguments);
-            }
+          tryInvoke(this, 'key-up', ...arguments);
         }
     }
 });
