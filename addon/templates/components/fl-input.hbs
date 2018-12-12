@@ -37,11 +37,11 @@
            type=type
            value=(mut value)
            class=textClass
-           enter="enter"
-           insert-newline="insertLine"
-           escape-press="escapePress"
-           key-press="keyPress"
-           key-up="keyUp"
+           enter=(action "enter")
+           insert-newline=(action "insertLine")
+           escape-press=(action "escapePress")
+           key-press=(action "keyPress")
+           key-up=(action "keyUp")
        }}
        {{#if label}}
            <label class="control-label">{{label}}</label>
