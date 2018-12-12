@@ -4,30 +4,28 @@
     position: relative;
     input,
     select {
-        padding: 0.94em 12px;
+        padding: $floating-label-padding;
     }
 
     select {
-        padding-right: 16px;
-        -webkit-appearance:none;
-        -moz-appearance:none;
+        appearance: none;
     }
 
     &.has-focus,
     &.has-content {
         input, textarea {
-            padding-top: 1.5em;
-            padding-bottom: 0.38em;
+            padding-top: $floating-label-text-focus-padding-top;
+            padding-bottom: $floating-label-text-focus-padding-bottom;
         }
         select {
-            padding-top: 0.7em;
-            padding-bottom: 0;
+            padding-top: $floating-label-select-focus-padding-top;
+            padding-bottom: $floating-label-select-focus-padding-bottom;
             &.input-lg {
-                padding-top: 0.4em;
+                padding-top: $floating-label-select-focus-padding-top - .5rem;
             }
         }
         .control-label {
-            top: 5px;
+            top: $floating-label-control-focus-top;
             margin-top: 0;
             opacity: 1;
             transform: perspective(1px) scale(.75);
@@ -37,20 +35,16 @@
         position: absolute;
         z-index: 1;
         top: 50%;
-        left: 14px;
-        margin-top: -7px;
-        font-size: 14px;
-        line-height: 14px;
+        left: $floating-label-control-label-size;
+        margin-top: -$floating-label-control-label-size / 2;
+        font-size: $floating-label-control-label-size;
+        line-height: $floating-label-control-label-size;
         font-weight: normal;
-        transition: all 450ms cubic-bezier(.23, 1, .32, 1) 0ms;
+        transition: $floating-label-control-label-transition;
         transform: translate3d(0, 0, 0) scale(1);
         transform-origin: left top 0;
         pointer-events: none;
-        opacity: 0.6;
-        .floating-label-textarea & {
-            top: 12px;
-            margin-top: 0;
-        }
+        opacity: $floating-label-control-opacity;
     }
     .form-control::placeholder {
         opacity: 0;
@@ -60,11 +54,8 @@
     .form-control:focus::placeholder {
         opacity: 1;
     }
-}
 
-/* only show custom indicator arrow in webkit/firefox */
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    .floating-label-select:after {
+    &-select:after {
         content: " ";
         position: absolute;
         display: inline-block;
@@ -72,29 +63,15 @@
         height: 0;
         top: 0;
         bottom: 0;
-        right: 8px;
+        right: 1rem;
         margin: auto;
         border-style: solid;
-        border-width: 7px 4px 0 4px;
-        border-color: #ccc transparent transparent transparent;
+        border-width: $floating-label-select-arrow;
+        border-color: $floating-label-select-arrow-color transparent transparent transparent;
         pointer-events: none;
     }
-}
-
-@-moz-document url-prefix() {
-    .floating-label-select:after {
-        content: " ";
-        position: absolute;
-        display: inline-block;
-        width: 0;
-        height: 0;
-        top: 0;
-        bottom: 0;
-        right: 8px;
-        margin: auto;
-        border-style: solid;
-        border-width: 7px 4px 0 4px;
-        border-color: #ccc transparent transparent transparent;
-        pointer-events: none;
+    &-textarea .control-label {
+        top: 1rem;
+        margin-top: 0;
     }
 }
