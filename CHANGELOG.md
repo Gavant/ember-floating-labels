@@ -1,6 +1,9 @@
 Changelog
 =========
 
+## v0.3.5
+Adding defaults for sass variables
+
 ## v0.3.4
 Improving Demo
 
