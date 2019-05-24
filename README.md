@@ -6,7 +6,7 @@ Demo: https://gavant.github.io/ember-floating-labels/
 ------------------------------------------------------------------------------
 
 ```
-ember install ember-floating-labels
+ember install @gavant/ember-floating-labels
 ```
 
 Usage
