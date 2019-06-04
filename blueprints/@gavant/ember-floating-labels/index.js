@@ -13,7 +13,7 @@ module.exports = {
 
     afterInstall() {
         let dependencies = this.project.dependencies();
-        let importStatement = '\n@import "@gavant/ember-floating-labels";\n';
+        let importStatement = '\n@import "ember-floating-labels";\n';
 
         if ('ember-cli-sass' in dependencies) {
             let stylePath = path.join('app', 'styles');
