@@ -1,6 +1,8 @@
 Changelog
 =========
 
+## v0.3.8
+
 ## v0.3.6
 
 ### Pull Requests
