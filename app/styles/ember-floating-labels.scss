@@ -1,6 +1,7 @@
 @import 'ember-floating-labels/variables';
 
 .floating-label {
+
     position: relative;
     textarea,
     input,
@@ -12,29 +13,34 @@
         appearance: none;
     }
 
-    &.has-focus,
-    &.has-content {
+    &.fl-has-focus-or-content {
         input, textarea {
             padding-top: $floating-label-text-focus-padding-top;
             padding-bottom: $floating-label-text-focus-padding-bottom;
+            //TODO should the addon define the input's font size?
             font-size: $floating-label-input-font-size;
         }
+
         select {
             padding-top: $floating-label-select-focus-padding-top;
             padding-bottom: $floating-label-select-focus-padding-bottom;
+            //TODO should the addon define the input's font size?
             font-size: $floating-label-input-font-size;
+
             &.input-lg {
                 padding-top: $floating-label-select-focus-padding-top - .5rem;
             }
         }
-        .control-label {
+
+        .fl-placeholder-label {
             top: $floating-label-control-focus-top;
             margin-top: 0;
             opacity: 1;
             transform: perspective(1px) scale(.75);
         }
     }
-    .control-label {
+
+    .fl-placeholder-label {
         position: absolute;
         z-index: 1;
         top: 50%;
@@ -49,15 +55,18 @@
         pointer-events: none;
         opacity: $floating-label-control-opacity;
     }
+
     .form-control::placeholder {
         opacity: 0;
         transition: all 350ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
     }
+
     &.is-disabled .form-control::placeholder,
     .form-control:focus::placeholder {
         opacity: 1;
     }
 
+    //TODO why do we need  this? cant use native <select> styling?
     &-select:after {
         content: " ";
         position: absolute;
@@ -73,6 +82,7 @@
         border-color: $floating-label-select-arrow-color transparent transparent transparent;
         pointer-events: none;
     }
+
     &-textarea .control-label {
         top: 1rem;
         margin-top: 0;

@@ -43,8 +43,6 @@ export default class FlInput extends Component<FlInputArgs> {
     @action
     onFocusIn() {
         scheduleOnce('afterRender', this, () => this.setFocus(true));
-        //TODO see if we can do this with on modifiers
-        // tryInvoke(this, 'focus-in', ...arguments);
     }
 
     /**
@@ -53,8 +51,6 @@ export default class FlInput extends Component<FlInputArgs> {
     @action
     onFocusOut() {
         scheduleOnce('afterRender', this, () => this.setFocus(false));
-        //TODO see if we can do this with on modifiers
-        // tryInvoke(this, 'focus-out', ...arguments);
     }
 
     /**
@@ -79,28 +75,5 @@ export default class FlInput extends Component<FlInputArgs> {
 
         return isEmpty(value);
     }
-
-    //TODO probably dont need these actions...
-    //but test using `on` modifiers on the component externally
-    //e.g. `<FlInput {{on "keyPress" this.onKeyPress}} />
-    // enter () {
-    //     tryInvoke(this, 'enter', ...arguments);
-    // },
-
-    // insertLine () {
-    //     tryInvoke(this, 'insert-newline', ...arguments);
-    // },
-
-    // escapePress () {
-    //     tryInvoke(this, 'escape-press', ...arguments);
-    // },
-
-    // keyPress () {
-    //     tryInvoke(this, 'key-press', ...arguments);
-    // },
-
-    // keyUp () {
-    //     tryInvoke(this, 'key-up', ...arguments);
-    // }
 }
 

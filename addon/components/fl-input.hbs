@@ -13,53 +13,6 @@
             </label>
         {{/if}}
     {{else}}
-{{!--
-        {{input
-            readonly=readonly
-            size=size
-            name=name
-            pattern=pattern
-            autosave=autosave
-            formmethod=formmethod
-            height=height
-            step=step
-            selectionDirection=selectionDirection
-            required=required
-            tabindex=tabindex
-            min=min
-            accept=accept
-            formaction=formaction
-            formnovalidate=formnovalidate
-            inputmode=inputmode
-            width=width
-            spellcheck=spellcheck
-            autofocus=autofocus
-            disabled=disabled
-            minlength=minlength
-            maxlength=maxlength
-            max=max
-            autocomplete=autocomplete
-            formenctype=formenctype
-            formtarget=formtarget
-            multiple=multiple
-            form=form
-            type=type
-            value=(mut value)
-            class=textClass
-            enter=(action "enter")
-            insert-newline=(action "insertLine")
-            escape-press=(action "escapePress")
-            key-press=(action "keyPress")
-            key-up=(action "keyUp")
-        }}
-
-        NEED TO HANDLE THESE?
-        enter=(action "enter")
-        insert-newline=(action "insertLine")
-        escape-press=(action "escapePress")
-        key-press=(action "keyPress")
-        key-up=(action "keyUp")
- --}}
         <Input
             @value={{@value}}
             class="{{this.inputBaseClass}}"
