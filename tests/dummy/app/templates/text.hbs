@@ -2,12 +2,24 @@
     <div class="col-md-6 col-md-push-3">
         <h1>Floating Label - Input</h1>
         <div class="form-group">
-            {{fl-input value=inputInlineValue placeholder="Inline Version" textClass="form-control"}}
+            <FlInput
+                @value={{this.inputInlineValue}}
+                @placeholder="Inline Version"
+                @containerClass="custom-container-class"
+                class="custom-class"
+            />
         </div>
         <div class="form-group">
-            {{#fl-input value=inputBlockValue placeholder="Block Version"}}
-                {{input value=inputBlockValue class="form-control" placeholder="Static Placeholder"}}
-            {{/fl-input}}
+            <FlInput
+                @value={{this.inputBlockValue}}
+                @placeholder="Block Version"
+            >
+                <Input
+                    @value={{this.inputBlockValue}}
+                    @placeholder="Static Placeholder"
+                    class="form-control"
+                />
+            </FlInput>
         </div>
         <div class="form-group">
             {{fl-input value=inputLgValue placeholder="Large Input" textClass="form-control input-lg"}}
