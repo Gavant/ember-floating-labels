@@ -1,7 +1,5 @@
-import Component from '@ember/component';
-import FloatingLabelMixin from '../mixins/floating-label';
-import InputActionsMixin from '../mixins/fl-input-actions';
+import FlInput, { FlInputArgs} from './fl-input';
 
-export default Component.extend(FloatingLabelMixin, InputActionsMixin, {
-    classNames: ['floating-label-textarea']
-});
+export interface FlTextareaArgs extends FlInputArgs {}
+
+export default class FlTextarea extends FlInput<FlTextareaArgs> {}

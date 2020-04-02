@@ -1,15 +1,31 @@
-<fieldset>
-    <select disabled={{disabled}} class={{selectClass}} onchange={{action "onChange" value="target.value"}}>
-        <option value="" disabled={{disableEmptyOption}}>{{if showEmptyOptionText emptyOptionText}}</option>
+<div class="floating-label floating-label-select {{@containerClass}}
+    {{~if this.hasFocus " fl-has-focus"}}
+    {{~if this.hasContent " fl-has-content"}}
+    {{~if this.hasFocusOrContent " fl-has-focus-or-content"}}"
+    {{on "focusin" this.onFocusIn}}
+    {{on "focusout" this.onFocusOut}}
+>
+    <select
+        class="{{this.inputBaseClass}}"
+        {{on "change" this.onChange}}
+        ...attributes
+    >
+        <option value="" disabled={{this.disableEmptyOption}}>
+            {{if this.hasFocus @emptyOptionText}}
+        </option>
         {{#if hasBlock}}
             {{yield this}}
         {{else}}
-            {{#each options as |opt|}}
-                <option value={{get opt valuePath}} selected={{eq (get opt valuePath) value}}>{{get opt labelPath}}</option>
+            {{#each @options as |opt|}}
+                <option value={{get opt this.valuePath}} selected={{eq (get opt this.valuePath) @value}}>
+                    {{get opt this.labelPath}}
+                </option>
             {{/each}}
         {{/if}}
     </select>
-    {{#if label}}
-        <label class="control-label">{{label}}</label>
+    {{#if @placeholder}}
+        <label class="control-label fl-placeholder-label">
+            {{@placeholder}}
+        </label>
     {{/if}}
-</fieldset>
+</div>

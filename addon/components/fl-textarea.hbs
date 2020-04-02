@@ -1,52 +1,27 @@
-<fieldset>
+<div class="floating-label floating-label-textarea {{@containerClass}}
+    {{~if this.hasFocus " fl-has-focus"}}
+    {{~if this.hasContent " fl-has-content"}}
+    {{~if this.hasFocusOrContent " fl-has-focus-or-content"}}"
+    {{on "focusin" this.onFocusIn}}
+    {{on "focusout" this.onFocusOut}}
+>
     {{#if hasBlock}}
         {{yield}}
-        {{#if label}}
-            <label class="control-label">{{label}}</label>
+        {{#if @placeholder}}
+            <label class="control-label fl-placeholder-label">
+                {{@placeholder}}
+            </label>
         {{/if}}
     {{else}}
-        {{textarea
-            rows=rows
-            cols=cols
-            wrap=wrap
-            readonly=readonly
-            size=size
-            name=name
-            pattern=pattern
-            autosave=autosave
-            formmethod=formmethod
-            height=height
-            step=step
-            selectionDirection=selectionDirection
-            required=required
-            tabindex=tabindex
-            min=min
-            accept=accept
-            formaction=formaction
-            formnovalidate=formnovalidate
-            inputmode=inputmode
-            width=width
-            spellcheck=spellcheck
-            autofocus=autofocus
-            disabled=disabled
-            minlength=minlength
-            maxlength=maxlength
-            max=max
-            autocomplete=autocomplete
-            formenctype=formenctype
-            formtarget=formtarget
-            multiple=multiple
-            form=form
-            value=(mut value)
-            class=textClass
-            enter=(action "enter")
-            insert-newline=(action "insertLine")
-            escape-press=(action "escapePress")
-            key-press=(action "keyPress")
-            key-up=(action "keyUp")
-        }}
-        {{#if label}}
-            <label class="control-label">{{label}}</label>
+        <Textarea
+            @value={{@value}}
+            class="{{this.inputBaseClass}}"
+            ...attributes
+        />
+        {{#if @placeholder}}
+            <label class="control-label fl-placeholder-label">
+                {{@placeholder}}
+            </label>
         {{/if}}
     {{/if}}
-</fieldset>
+</div>

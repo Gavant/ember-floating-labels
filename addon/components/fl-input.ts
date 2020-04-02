@@ -13,7 +13,7 @@ export interface FlInputArgs {
     inputBaseClass?: string;
 }
 
-export default class FlInput extends Component<FlInputArgs> {
+export default class FlInput<T extends FlInputArgs> extends Component<T> {
     @tracked hasFocus: boolean = false;
 
     /**
@@ -76,4 +76,3 @@ export default class FlInput extends Component<FlInputArgs> {
         return isEmpty(value);
     }
 }
-
