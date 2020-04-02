@@ -4,25 +4,17 @@
     position: relative;
 
     textarea, input {
-        padding-top: $floating-label-text-focus-padding-top;
-        padding-bottom: $floating-label-text-focus-padding-bottom;
+        padding-top: $floating-label-text-padding-top;
+        padding-bottom: $floating-label-text-padding-bottom;
     }
 
-    &.fl-has-focus-or-content {
-        select {
-            padding-top: $floating-label-select-focus-padding-top;
-            padding-bottom: $floating-label-select-focus-padding-bottom;
+    select {
+        appearance: none;
+        padding-top: $floating-label-select-padding-top;
+        padding-bottom: $floating-label-select-padding-bottom;
 
-            &.input-lg {
-                padding-top: $floating-label-select-focus-padding-top - .5rem;
-            }
-        }
-
-        .fl-placeholder-label {
-            top: $floating-label-control-focus-top;
-            margin-top: 0;
-            opacity: 1;
-            transform: perspective(1px) scale(.75);
+        &.input-lg {
+            padding-top: $floating-label-select-padding-top - 0.5rem;
         }
     }
 
@@ -42,10 +34,37 @@
         opacity: $floating-label-control-opacity;
     }
 
+    &.fl-has-focus-or-content {
+        .fl-placeholder-label {
+            top: $floating-label-control-focus-top;
+            margin-top: 0;
+            opacity: 1;
+            transform: perspective(1px) scale(.75);
+        }
+    }
+
     &-textarea {
         .fl-placeholder-label {
-            top: 1rem;
+            top: $floating-label-control-textarea-top;
             margin-top: 0;
+        }
+    }
+
+    &-select {
+        &::after {
+            content: " ";
+            position: absolute;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            top: 0;
+            bottom: 0;
+            right: 1rem;
+            margin: auto;
+            border-style: solid;
+            border-width: $floating-label-select-arrow;
+            border-color: $floating-label-select-arrow-color transparent transparent transparent;
+            pointer-events: none;
         }
     }
 
