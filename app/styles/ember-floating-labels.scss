@@ -3,18 +3,11 @@
 .floating-label {
     position: relative;
 
-    textarea, input {
-        padding-top: $floating-label-text-padding-top;
-        padding-bottom: $floating-label-text-padding-bottom;
-    }
-
     select {
         appearance: none;
-        padding-top: $floating-label-select-padding-top;
-        padding-bottom: $floating-label-select-padding-bottom;
 
         &.input-lg {
-            padding-top: $floating-label-select-padding-top - 0.5rem;
+            padding-top: 0;
         }
     }
 
@@ -22,7 +15,7 @@
         position: absolute;
         z-index: 1;
         top: 50%;
-        left: $floating-label-control-label-size;
+        left: $floating-label-control-label-left;
         margin-top: -$floating-label-control-label-size / 2;
         font-size: $floating-label-control-label-size;
         line-height: $floating-label-control-label-size;
@@ -38,8 +31,36 @@
         .fl-placeholder-label {
             top: $floating-label-control-focus-top;
             margin-top: 0;
+            padding: 0 4px;
             opacity: 1;
+            background: $floating-label-control-focus-background;
             transform: perspective(1px) scale(.75);
+            z-index: 5;
+        }
+    }
+
+    &.fl-inset-placeholder {
+        textarea, input {
+            padding-top: $floating-label-text-padding-top;
+            padding-bottom: $floating-label-text-padding-bottom;
+        }
+
+        select {
+            padding-top: $floating-label-select-padding-top;
+            padding-bottom: $floating-label-select-padding-bottom;
+
+            &.input-lg {
+                padding-top: $floating-label-select-padding-top - 0.5rem;
+            }
+        }
+
+        &.fl-has-focus-or-content {
+            .fl-placeholder-label {
+                top: $floating-label-inset-control-focus-top;
+                padding: 0;
+                background: none;
+                z-index: 1;
+            }
         }
     }
 

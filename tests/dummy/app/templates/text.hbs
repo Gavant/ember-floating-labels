@@ -17,6 +17,14 @@
         </div>
         <div class="form-group">
             <FlInput
+                @value={{this.inputInlineValue}}
+                @placeholder="Inset Version"
+                @containerClass="custom-container-class"
+                @inset={{true}}
+            />
+        </div>
+        <div class="form-group">
+            <FlInput
                 @value={{this.inputBlockValue}}
                 @placeholder="Block Version"
             >
@@ -35,6 +43,14 @@
                 type="number"
                 min="1"
                 max="10"
+            />
+        </div>
+        <div class="form-group">
+            <FlInput
+                @value={{this.inputInsetLgValue}}
+                @placeholder="Large Input (Inset)"
+                @inset={{true}}
+                class="input-lg"
             />
         </div>
         <div class="form-group">

@@ -11,6 +11,7 @@ export interface FlInputArgs {
     placeholder?: string;
     containerClass?: string;
     inputBaseClass?: string;
+    inset?: boolean;
 }
 
 export default class FlInput<T extends FlInputArgs> extends Component<T> {

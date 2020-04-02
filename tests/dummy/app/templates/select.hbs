@@ -14,6 +14,16 @@
             <FlSelect
                 @value={{this.selectInlineValue}}
                 @options={{this.inlineSelectOptions}}
+                @placeholder="Inset Version"
+                @emptyOptionText="Select a fruit..."
+                @inset={{true}}
+                @onChange={{action (mut this.selectInlineValue)}}
+            />
+        </div>
+        <div class="form-group">
+            <FlSelect
+                @value={{this.selectInlineValue}}
+                @options={{this.inlineSelectOptions}}
                 @placeholder="Inline Version"
                 @emptyOptionText="Select a fruit..."
                 @onChange={{action (mut this.selectInlineValue)}}
