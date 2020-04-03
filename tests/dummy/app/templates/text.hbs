@@ -1,22 +1,74 @@
-<div class="row">
-    <div class="col-md-6 col-md-push-3">
-        <h1>Floating Label - Input</h1>
+<div class="row justify-content-center">
+    <div class="py-4 col-md-6">
+        <h2>Input</h2>
         <div class="form-group">
-            {{fl-input value=inputInlineValue placeholder="Inline Version" textClass="form-control"}}
+            <FlInput
+                @value={{this.inputInlineValue}}
+                @placeholder="Inline Version"
+                @containerClass="custom-container-class"
+                class="custom-class"
+                tabindex={{-1}}
+                {{on "focusin" this.onFocusIn}}
+                {{on "focusout" this.onFocusOut}}
+                {{on "keydown" this.onKeyDown}}
+                {{on "keyup" this.onKeyUp}}
+                {{on "keypress" this.onKeyPress}}
+            />
         </div>
         <div class="form-group">
-            {{#fl-input value=inputBlockValue placeholder="Block Version"}}
-                {{input value=inputBlockValue class="form-control" placeholder="Static Placeholder"}}
-            {{/fl-input}}
+            <FlInput
+                @value={{this.inputInlineValue}}
+                @placeholder="Inset Version"
+                @containerClass="custom-container-class"
+                @inset={{true}}
+            />
         </div>
         <div class="form-group">
-            {{fl-input value=inputLgValue placeholder="Large Input" textClass="form-control input-lg"}}
+            <FlInput
+                @value={{this.inputBlockValue}}
+                @placeholder="Block Version"
+            >
+                <Input
+                    @value={{this.inputBlockValue}}
+                    @placeholder="Static Placeholder"
+                    class="form-control custom-block-input"
+                />
+            </FlInput>
         </div>
         <div class="form-group">
-            {{fl-input value=inputSmValue placeholder="Small Input" textClass="form-control input-sm"}}
+            <FlInput
+                @value={{this.inputLgValue}}
+                @placeholder="Large Input"
+                class="input-lg"
+                type="number"
+                min="1"
+                max="10"
+            />
         </div>
         <div class="form-group">
-            {{fl-input value=inputSmValue placeholder="Small Input" textClass="form-control input-sm" disabled=true}}
+            <FlInput
+                @value={{this.inputInsetLgValue}}
+                @placeholder="Large Input (Inset)"
+                @inset={{true}}
+                class="input-lg"
+            />
+        </div>
+        <div class="form-group">
+            <FlInput
+                @value={{this.inputSmValue}}
+                @placeholder="Small Input"
+                class="input-sm"
+                maxlength="16"
+                autocomplete="off"
+            />
+        </div>
+        <div class="form-group">
+            <FlInput
+                @value={{this.inputSmValue}}
+                @placeholder="Small Input"
+                class="input-sm"
+                disabled={{true}}
+            />
         </div>
     </div>
 </div>

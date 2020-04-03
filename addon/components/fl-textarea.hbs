@@ -1,0 +1,28 @@
+<div class="floating-label floating-label-textarea {{@containerClass}}
+    {{~if @inset " fl-inset-placeholder"}}
+    {{~if this.hasFocus " fl-has-focus"}}
+    {{~if this.hasContent " fl-has-content"}}
+    {{~if this.hasFocusOrContent " fl-has-focus-or-content"}}"
+    {{on "focusin" this.onFocusIn}}
+    {{on "focusout" this.onFocusOut}}
+>
+    {{#if hasBlock}}
+        {{yield}}
+        {{#if @placeholder}}
+            <label class="control-label fl-placeholder-label">
+                {{@placeholder}}
+            </label>
+        {{/if}}
+    {{else}}
+        <Textarea
+            @value={{@value}}
+            class="{{this.inputBaseClass}}"
+            ...attributes
+        />
+        {{#if @placeholder}}
+            <label class="control-label fl-placeholder-label">
+                {{@placeholder}}
+            </label>
+        {{/if}}
+    {{/if}}
+</div>

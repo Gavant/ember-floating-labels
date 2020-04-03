@@ -1,4 +1,8 @@
 import Route from '@ember/routing/route';
 
-export default Route.extend({
-});
+export default class SelectRoute extends Route {
+    setupController(controller) {
+        super.setupController(...arguments);
+        controller.selectLgValue = controller.customSelectOptions.lastObject.abbrv;
+    }
+}

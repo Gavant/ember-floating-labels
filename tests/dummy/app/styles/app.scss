@@ -1,6 +1,4 @@
-$floating-label-control-label-size: 1rem;
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'ember-floating-labels';
 
-@import "mixins";
-@import "layout";
-@import "container";
-@import "ember-floating-labels";
+@import 'layout';
