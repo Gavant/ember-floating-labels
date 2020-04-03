@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v1.0.0
+
+### Pull Requests
+
+- [#7](https://github.com/Gavant/ember-floating-labels/pull/7) **octanification**: Attack of the Components  *by [Gavant](https://github.com/Gavant)*
+
 ## v0.3.8
 
 ## v0.3.6
