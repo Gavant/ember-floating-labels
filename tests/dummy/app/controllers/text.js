@@ -29,6 +29,6 @@ export default class TextController extends Controller {
     @action
     onKeyPress(event) {
         // eslint-disable-next-line no-console
-        console.log('keypres!', event);
+        console.log('keypress!', event);
     }
 }
