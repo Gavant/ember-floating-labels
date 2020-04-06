@@ -39,7 +39,7 @@
                 @placeholder="Large Select"
                 @allowClear={{false}}
                 @onChange={{action (mut this.selectLgValue)}}
-                class="input-lg"
+                class="form-control-lg"
             />
         </div>
         <div class="form-group">
@@ -48,7 +48,7 @@
                 @placeholder="Block Version"
                 @emptyOptionText="Select something..."
                 @onChange={{action (mut selectBlockValue)}}
-                class="input-lg"
+                class="form-control-lg"
                 as |Select|
             >
                 <optgroup label="Custom Group">
