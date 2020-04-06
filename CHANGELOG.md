@@ -1,6 +1,10 @@
 Changelog
 =========
 
+## v1.0.1
+
+- fix demo input size classes
+
 ## v1.0.0
 
 ### Pull Requests
