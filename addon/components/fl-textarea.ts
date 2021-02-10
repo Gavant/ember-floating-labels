@@ -1,4 +1,4 @@
-import FlInput, { FlInputArgs} from './fl-input';
+import FlInput, { FlInputArgs } from './fl-input';
 
 export interface FlTextareaArgs extends FlInputArgs {}
 

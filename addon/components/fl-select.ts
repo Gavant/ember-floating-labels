@@ -1,6 +1,6 @@
-
 import { action } from '@ember/object';
-import FlInput, { FlInputArgs} from './fl-input';
+
+import FlInput, { FlInputArgs } from './fl-input';
 
 export interface FlSelectArgs extends FlInputArgs {
     options: Array<object>;
@@ -45,7 +45,7 @@ export default class FlSelect extends FlInput<FlSelectArgs> {
      * @param {Event} event
      */
     @action
-    onChange(event: Event) {
+    onChange(event: Event): void {
         const target = event.target as HTMLSelectElement;
         this.args.onChange(target.value);
     }

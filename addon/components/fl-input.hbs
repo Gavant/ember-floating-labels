@@ -1,15 +1,17 @@
-<div class="floating-label {{@containerClass}}
-    {{~if @inset " fl-inset-placeholder"}}
-    {{~if this.hasFocus " fl-has-focus"}}
-    {{~if this.hasContent " fl-has-content"}}
-    {{~if this.hasFocusOrContent " fl-has-focus-or-content"}}"
+<div
+    class="floating-label
+        {{@containerClass}}
+        {{if @inset " fl-inset-placeholder"}}
+        {{if this.hasFocus " fl-has-focus"}}
+        {{if this.hasContent " fl-has-content"}}
+        {{if this.hasFocusOrContent " fl-has-focus-or-content"}}"
     {{on "focusin" this.onFocusIn}}
     {{on "focusout" this.onFocusOut}}
 >
     {{#if hasBlock}}
         {{yield}}
         {{#if @placeholder}}
-            <label class="control-label fl-placeholder-label">
+            <label class="control-label fl-placeholder-label" for="{{this.id}}">
                 {{@placeholder}}
             </label>
         {{/if}}
@@ -17,10 +19,11 @@
         <Input
             @value={{@value}}
             class="{{this.inputBaseClass}}"
+            id={{this.id}}
             ...attributes
         />
         {{#if @placeholder}}
-            <label class="control-label fl-placeholder-label">
+            <label class="control-label fl-placeholder-label" for="{{this.id}}">
                 {{@placeholder}}
             </label>
         {{/if}}
