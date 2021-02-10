@@ -11,7 +11,7 @@
     {{#if hasBlock}}
         {{yield}}
         {{#if @placeholder}}
-            <label class="control-label fl-placeholder-label" for="{{this.id}}">
+            <label class="control-label fl-placeholder-label" for={{this.id}}>
                 {{@placeholder}}
             </label>
         {{/if}}
@@ -23,7 +23,7 @@
             ...attributes
         />
         {{#if @placeholder}}
-            <label class="control-label fl-placeholder-label" for="{{this.id}}">
+            <label class="control-label fl-placeholder-label" for={{this.id}}>
                 {{@placeholder}}
             </label>
         {{/if}}
