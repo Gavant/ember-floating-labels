@@ -1,10 +1,11 @@
+import ArrayProxy from '@ember/array/proxy';
+import { action } from '@ember/object';
+import { guidFor } from '@ember/object/internals';
+import ObjectProxy from '@ember/object/proxy';
+import { scheduleOnce } from '@ember/runloop';
+import { isEmpty } from '@ember/utils';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { action } from '@ember/object';
-import { isEmpty } from '@ember/utils';
-import { scheduleOnce } from '@ember/runloop';
-import ObjectProxy from '@ember/object/proxy';
-import ArrayProxy from '@ember/array/proxy';
 
 export interface FlInputArgs {
     value: any;
@@ -12,6 +13,7 @@ export interface FlInputArgs {
     containerClass?: string;
     inputBaseClass?: string;
     inset?: boolean;
+    id?: string;
 }
 
 export default class FlInput<T extends FlInputArgs> extends Component<T> {
@@ -39,19 +41,29 @@ export default class FlInput<T extends FlInputArgs> extends Component<T> {
     }
 
     /**
+     * Get the id and pass it to the text input, and use it in the label's `for` value
+     *
+     * @readonly
+     * @memberof FlInput
+     */
+    get id(): string {
+        return this.args.id ?? `fl-input-${guidFor(this)}`;
+    }
+
+    /**
      * Updates the component's focused state when it recieves focus
      */
     @action
-    onFocusIn() {
-        scheduleOnce('afterRender', this, () => this.setFocus(true));
+    onFocusIn(): void {
+        scheduleOnce('afterRender', this, this.setFocus, true);
     }
 
     /**
      * Updates the component's focused state when it loses focus
      */
     @action
-    onFocusOut() {
-        scheduleOnce('afterRender', this, () => this.setFocus(false));
+    onFocusOut(): void {
+        scheduleOnce('afterRender', this, this.setFocus, false);
     }
 
     /**
@@ -59,7 +71,7 @@ export default class FlInput<T extends FlInputArgs> extends Component<T> {
      * @param {Boolean} newValue
      */
     private setFocus(newValue: boolean) {
-        if(!this.isDestroying && !this.isDestroyed) {
+        if (!this.isDestroying && !this.isDestroyed) {
             this.hasFocus = newValue;
         }
     }
