@@ -1,4 +1,5 @@
 import { action } from '@ember/object';
+import { dasherize } from '@ember/string';
 
 import FlInput, { FlInputArgs } from './fl-input';
 
@@ -38,6 +39,11 @@ export default class FlSelect extends FlInput<FlSelectArgs> {
      */
     get disableEmptyOption(): boolean {
         return !this.allowClear;
+    }
+
+    get selectName() {
+        const name = this.args.name ?? this.args.placeholder;
+        return name ? dasherize(name) : '';
     }
 
     /**
