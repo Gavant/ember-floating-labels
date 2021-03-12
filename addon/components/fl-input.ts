@@ -52,9 +52,9 @@ export default class FlInput<T extends FlInputArgs> extends Component<T> {
         return this.args.id ?? `fl-input-${guidFor(this)}`;
     }
 
-    get inputName() {
+    get name() {
         const name = this.args.name ?? this.args.placeholder;
-        return name ? dasherize(name) : '';
+        return name ? dasherize(name.replace(/\W/g, '')) : '';
     }
 
     /**
