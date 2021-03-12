@@ -3,6 +3,7 @@ import { action } from '@ember/object';
 import { guidFor } from '@ember/object/internals';
 import ObjectProxy from '@ember/object/proxy';
 import { scheduleOnce } from '@ember/runloop';
+import { dasherize } from '@ember/string';
 import { isEmpty } from '@ember/utils';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
@@ -14,6 +15,7 @@ export interface FlInputArgs {
     inputBaseClass?: string;
     inset?: boolean;
     id?: string;
+    name?: string;
 }
 
 export default class FlInput<T extends FlInputArgs> extends Component<T> {
@@ -48,6 +50,11 @@ export default class FlInput<T extends FlInputArgs> extends Component<T> {
      */
     get id(): string {
         return this.args.id ?? `fl-input-${guidFor(this)}`;
+    }
+
+    get inputName() {
+        const name = this.args.name ?? this.args.placeholder;
+        return name ? dasherize(name) : '';
     }
 
     /**

@@ -20,7 +20,7 @@
             @value={{@value}}
             class="{{this.inputBaseClass}}"
             id={{this.id}}
-            name={{or @name @placeholder}}
+            name={{this.inputName}}
             ...attributes
         />
         {{#if @placeholder}}
