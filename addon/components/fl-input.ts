@@ -53,8 +53,7 @@ export default class FlInput<T extends FlInputArgs> extends Component<T> {
     }
 
     get name() {
-        const name = this.args.name ?? this.args.placeholder;
-        return name ? dasherize(name.replace(/\W/g, '')) : '';
+        return this.args.name ?? dasherize(this.args.placeholder?.replace(/\W/g, '') ?? '');
     }
 
     /**
