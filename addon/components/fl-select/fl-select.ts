@@ -1,6 +1,6 @@
 import { action } from '@ember/object';
 
-import FlInput, { FlInputArgs } from './fl-input';
+import FlInput, { FlInputArgs } from '@gavant/ember-floating-labels/components/fl-input/fl-input';
 
 export interface FlSelectArgs extends FlInputArgs {
     options: Array<object>;
