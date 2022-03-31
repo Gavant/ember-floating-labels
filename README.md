@@ -4,30 +4,27 @@ Animated floating placeholder form labels for Ember apps.
 
 Demo: https://gavant.github.io/ember-floating-labels/
 
-Compatibility
-------------------------------------------------------------------------------
+## Compatibility
 
-* Ember.js v3.12 or above
-* Ember CLI v2.13 or above
-* Node.js v10 or above
+-   Ember.js v3.24 or above
+-   Ember CLI v3.24 or above
+-   Node.js v12 or above
 
-
-Installation
-------------------------------------------------------------------------------
+## Installation
 
 ```
 ember install @gavant/ember-floating-labels
 ```
 
 To use the addon styles, you must use SASS:
+
 ```
 ember install ember-cli-sass
 ```
 
 (Upon addon installation, an import statement will be added to your `app.scss`)
 
-Usage
-------------------------------------------------------------------------------
+## Usage
 
 An example `<FlInput>` usage, with all available arguments specified. Only `@value` and `@placeholder` are required, and you may pass in normal HTML attributes as well which will be applied to the `<input>` element (e.g. `type="email"`, or `disabled={{true}}`, `class="some-custom-input-class"` etc).
 
@@ -42,11 +39,12 @@ An example `<FlInput>` usage, with all available arguments specified. Only `@val
     @inset={{boolean}}
 />
 
-{{!-- block form is supported too --}}
-<FlInput @value={{this.someValue}} @placeholder="Block input">
-    <Input @value={{this.someValue}} placeholder="Look ma, block content!" />
+{{! block form is supported too }}
+<FlInput @value={{this.someValue}} @placeholder='Block input'>
+    <Input @value={{this.someValue}} placeholder='Look ma, block content!' />
 </FlInput>
 ```
+
 **NOTE:** When using block form, make sure to still pass in a `@value`, so the label knows when to remain "floated".
 
 There are also floating label components for `<select>` & `<textarea>` fields:
@@ -77,13 +75,10 @@ There are also floating label components for `<select>` & `<textarea>` fields:
 />
 ```
 
-Contributing
-------------------------------------------------------------------------------
+## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
 
-
-License
-------------------------------------------------------------------------------
+## License
 
 This project is licensed under the [MIT License](LICENSE.md).
