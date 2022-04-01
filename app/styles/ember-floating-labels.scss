@@ -16,7 +16,7 @@
         z-index: 1;
         top: 50%;
         left: $floating-label-control-label-left;
-        margin-top: -$floating-label-control-label-size / 2;
+        margin-top: -1 * calc($floating-label-control-label-size / 2);
         font-size: $floating-label-control-label-size;
         line-height: $floating-label-control-label-size;
         font-weight: normal;
