@@ -8,7 +8,6 @@ module.exports = {
         'eslint:recommended',
         'plugin:ember/recommended',
         'plugin:@typescript-eslint/recommended',
-        'prettier/@typescript-eslint',
         'prettier',
         'plugin:prettier/recommended'
     ],

@@ -1,1 +1,1 @@
-export { default } from '@gavant/ember-floating-labels/components/fl-textarea';
+export { default } from '@gavant/ember-floating-labels/components/fl-textarea/fl-textarea';
