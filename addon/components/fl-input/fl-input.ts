@@ -18,7 +18,7 @@ export interface FlInputArgs {
     name?: string;
 }
 
-export default class FlInput<T extends FlInputArgs> extends Component<T> {
+export class FlInput<T extends FlInputArgs> extends Component<T> {
     @tracked hasFocus: boolean = false;
 
     /**
@@ -96,3 +96,5 @@ export default class FlInput<T extends FlInputArgs> extends Component<T> {
         return isEmpty(value);
     }
 }
+
+export default class FlInputDefault extends FlInput<FlInputArgs> {}

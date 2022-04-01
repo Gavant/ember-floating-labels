@@ -1,4 +1,4 @@
-import FlInput, { FlInputArgs } from '@gavant/ember-floating-labels/components/fl-input/fl-input';
+import { FlInput, FlInputArgs } from '@gavant/ember-floating-labels/components/fl-input/fl-input';
 
 export interface FlTextareaArgs extends FlInputArgs {}
 
