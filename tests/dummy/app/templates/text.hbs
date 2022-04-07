@@ -2,6 +2,7 @@
     <div class="py-4 col-md-6">
         <h2>Input</h2>
         <div class="form-group">
+            {{! template-lint-disable no-down-event-binding }}
             <FlInput
                 @value={{this.inputInlineValue}}
                 @placeholder="Inline Version"
@@ -24,13 +25,11 @@
             />
         </div>
         <div class="form-group">
-            <FlInput
-                @value={{this.inputBlockValue}}
-                @placeholder="Block Version"
-            >
+            <FlInput @value={{this.inputBlockValue}} @placeholder="Block Version">
+                {{! template-lint-disable require-input-label }}
                 <Input
                     @value={{this.inputBlockValue}}
-                    @placeholder="Static Placeholder"
+                    placeholder="Static Placeholder"
                     class="form-control custom-block-input"
                 />
             </FlInput>
@@ -63,12 +62,7 @@
             />
         </div>
         <div class="form-group">
-            <FlInput
-                @value={{this.inputSmValue}}
-                @placeholder="Small Input"
-                class="input-sm"
-                disabled={{true}}
-            />
+            <FlInput @value={{this.inputSmValue}} @placeholder="Small Input" class="input-sm" disabled={{true}} />
         </div>
     </div>
 </div>

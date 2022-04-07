@@ -8,7 +8,7 @@
     {{on "focusin" this.onFocusIn}}
     {{on "focusout" this.onFocusOut}}
 >
-    {{#if hasBlock}}
+    {{#if (has-block)}}
         {{yield}}
         {{#if @placeholder}}
             <label class="control-label fl-placeholder-label" for={{this.id}}>

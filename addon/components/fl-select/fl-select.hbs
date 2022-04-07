@@ -18,7 +18,7 @@
         <option value="" disabled={{this.disableEmptyOption}}>
             {{if this.hasFocus @emptyOptionText}}
         </option>
-        {{#if hasBlock}}
+        {{#if (has-block)}}
             {{yield this}}
         {{else}}
             {{#each @options as |opt|}}

@@ -1,1 +1,1 @@
-export { default } from '@gavant/ember-floating-labels/components/fl-select';
+export { default } from '@gavant/ember-floating-labels/components/fl-select/fl-select';

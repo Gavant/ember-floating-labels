@@ -87,8 +87,9 @@ export default class FlInput<T extends FlInputArgs> extends Component<T> {
      * @param {any} value
      */
     private isValueEmpty(value: any): boolean {
-        if (value instanceof ObjectProxy || value instanceof ArrayProxy) {
-            //@ts-ignore we need to use `.get()` to access the proxy value correctly
+        if (value instanceof ObjectProxy) {
+            return this.isValueEmpty(value.get('content'));
+        } else if (value instanceof ArrayProxy) {
             return this.isValueEmpty(value.get('content'));
         }
 

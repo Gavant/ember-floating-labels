@@ -12,6 +12,6 @@ module('Integration | Component | fl-input', function (hooks) {
     test('it renders', async function (assert) {
         await render(hbs`<FlInput @placeholder="test"/>`);
         await a11yAudit();
-        assert.equal(this.element.textContent?.trim(), 'test');
+        assert.strictEqual(this.element.textContent?.trim(), 'test');
     });
 });
