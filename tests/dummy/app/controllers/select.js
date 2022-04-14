@@ -7,6 +7,7 @@ export default class SelectController extends Controller {
     @tracked selectLgValue;
     @tracked selectInlineValue;
     @tracked selectBlockValue;
+    @tracked errors = [];
 
     inlineSelectOptions = A([
         { value: 'a', label: 'Apples' },
@@ -33,5 +34,10 @@ export default class SelectController extends Controller {
     @action
     onSelectBlockValue(value) {
         this.selectInlineValue = value;
+    }
+
+    @action
+    showError() {
+        this.errors = ['This is an example error'];
     }
 }

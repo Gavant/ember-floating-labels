@@ -62,5 +62,21 @@
                 </optgroup>
             </FlSelect>
         </div>
+
+        <div class="form-group">
+            <FlSelect
+                @value={{this.selectLgValue}}
+                @valuePath="abbrv"
+                @labelPath="name"
+                @options={{this.customSelectOptions}}
+                @placeholder="Large Select"
+                @allowClear={{false}}
+                @onChange={{this.onSelectLgValue}}
+                class="form-control-lg"
+                @errors={{this.errors}}
+            />
+        </div>
+
+        <button type="button" {{on "click" this.showError}}>Show Error</button>
     </div>
 </div>

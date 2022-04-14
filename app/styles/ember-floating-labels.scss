@@ -12,6 +12,7 @@
     }
 
     &.fl-has-error {
+        select,
         .form-control {
             border-color: $floating-label-border-error-color;
         }

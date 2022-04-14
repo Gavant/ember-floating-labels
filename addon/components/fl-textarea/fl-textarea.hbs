@@ -4,7 +4,8 @@
         {{if @inset ' fl-inset-placeholder'}}
         {{if this.hasFocus ' fl-has-focus'}}
         {{if this.hasContent ' fl-has-content'}}
-        {{if this.hasFocusOrContent ' fl-has-focus-or-content'}}"
+        {{if this.hasFocusOrContent ' fl-has-focus-or-content'}}
+        {{if this.firstError ' fl-has-error'}}"
     {{on "focusin" this.onFocusIn}}
     {{on "focusout" this.onFocusOut}}
 >
