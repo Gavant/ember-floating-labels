@@ -64,5 +64,11 @@
         <div class="form-group">
             <FlInput @value={{this.inputSmValue}} @placeholder="Small Input" class="input-sm" disabled={{true}} />
         </div>
+
+        <div class="form-group">
+            <FlInput @value={{this.inputSmValue}} @placeholder="Small Input" class="input-sm" @errors={{this.errors}} />
+        </div>
+
+        <button type="button" {{on "click" this.showError}}>Show Error</button>
     </div>
 </div>

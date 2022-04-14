@@ -11,6 +11,16 @@
         }
     }
 
+    &.fl-has-error {
+        select,
+        .form-control {
+            border-color: $floating-label-border-error-color;
+        }
+        .fl-placeholder-label {
+            color: $floating-label-text-error-color;
+        }
+    }
+
     .fl-placeholder-label {
         position: absolute;
         z-index: 1;

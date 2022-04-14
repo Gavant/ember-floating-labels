@@ -16,6 +16,7 @@ export interface FlInputArgs {
     inset?: boolean;
     id?: string;
     name?: string;
+    errors?: string[];
 }
 
 export default class FlInput<T extends FlInputArgs> extends Component<T> {
@@ -52,8 +53,16 @@ export default class FlInput<T extends FlInputArgs> extends Component<T> {
         return this.args.id ?? `fl-input-${guidFor(this)}`;
     }
 
-    get name() {
+    get name(): string {
         return this.args.name ?? dasherize(this.args.placeholder?.replace(/\W/g, '') ?? '');
+    }
+
+    get firstError(): string | null {
+        return Array.isArray(this.args.errors) ? this.args.errors[0] : null;
+    }
+
+    get placeholder(): string | undefined {
+        return this.firstError ?? this.args.placeholder;
     }
 
     /**
