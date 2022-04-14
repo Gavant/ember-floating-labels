@@ -1,10 +1,10 @@
 <div
     class="floating-label floating-label-select
         {{@containerClass}}
-        {{if @inset " fl-inset-placeholder"}}
-        {{if this.hasFocus " fl-has-focus"}}
-        {{if this.hasContent " fl-has-content"}}
-        {{if this.hasFocusOrContent " fl-has-focus-or-content"}}"
+        {{if @inset ' fl-inset-placeholder'}}
+        {{if this.hasFocus ' fl-has-focus'}}
+        {{if this.hasContent ' fl-has-content'}}
+        {{if this.hasFocusOrContent ' fl-has-focus-or-content'}}"
     {{on "focusin" this.onFocusIn}}
     {{on "focusout" this.onFocusOut}}
 >
@@ -22,18 +22,15 @@
             {{yield this}}
         {{else}}
             {{#each @options as |opt|}}
-                <option
-                    value={{get opt this.valuePath}}
-                    selected={{eq (get opt this.valuePath) @value}}
-                >
+                <option value={{get opt this.valuePath}} selected={{eq (get opt this.valuePath) @value}}>
                     {{get opt this.labelPath}}
                 </option>
             {{/each}}
         {{/if}}
     </select>
-    {{#if @placeholder}}
+    {{#if this.placeholder}}
         <label class="control-label fl-placeholder-label" for={{this.id}}>
-            {{@placeholder}}
+            {{this.placeholder}}
         </label>
     {{/if}}
 </div>
