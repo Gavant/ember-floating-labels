@@ -19,6 +19,6 @@ module('Integration | Component | fl-input', function (hooks) {
         await render(hbs`<FlInput @placeholder="password" @type="password"/>`);
         await a11yAudit();
         const inputElement = this.element.querySelector('input') as HTMLInputElement;
-        assert.equal(inputElement.type, 'password');
+        assert.strictEqual(inputElement.type, 'password');
     });
 });
