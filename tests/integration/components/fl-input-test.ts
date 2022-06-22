@@ -14,4 +14,11 @@ module('Integration | Component | fl-input', function (hooks) {
         await a11yAudit();
         assert.strictEqual(this.element.textContent?.trim(), 'test');
     });
+
+    test('Type attribute is set on the <input> when using <FlInput />', async function (assert) {
+        await render(hbs`<FlInput @placeholder="password" @type="password"/>`);
+        await a11yAudit();
+        const inputElement = this.element.querySelector('input') as HTMLInputElement;
+        assert.equal(inputElement.type, 'password');
+    });
 });

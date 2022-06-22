@@ -17,7 +17,14 @@
             </label>
         {{/if}}
     {{else}}
-        <Input @value={{@value}} class="{{this.inputBaseClass}}" id={{this.id}} name={{this.name}} ...attributes />
+        <Input
+            @value={{@value}}
+            @type={{this.type}}
+            class="{{this.inputBaseClass}}"
+            id={{this.id}}
+            name={{this.name}}
+            ...attributes
+        />
         {{#if this.placeholder}}
             <label class="control-label fl-placeholder-label" for={{this.id}}>
                 {{this.placeholder}}

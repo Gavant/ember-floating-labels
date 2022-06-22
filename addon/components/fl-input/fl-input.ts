@@ -16,6 +16,7 @@ export interface FlInputArgs {
     inset?: boolean;
     id?: string;
     name?: string;
+    type?: string;
     errors?: string[];
 }
 
@@ -63,6 +64,10 @@ export default class FlInput<T extends FlInputArgs> extends Component<T> {
 
     get placeholder(): string | undefined {
         return this.firstError ?? this.args.placeholder;
+    }
+
+    get type(): string {
+        return this.args.type ?? 'text';
     }
 
     /**
