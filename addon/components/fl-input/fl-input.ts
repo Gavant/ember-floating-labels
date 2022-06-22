@@ -8,6 +8,30 @@ import { isEmpty } from '@ember/utils';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
+export type HTMLInputType =
+    | 'button'
+    | 'checkbox'
+    | 'color'
+    | 'date'
+    | 'datetime-local'
+    | 'email'
+    | 'file'
+    | 'hidden'
+    | 'image'
+    | 'month'
+    | 'number'
+    | 'password'
+    | 'radio'
+    | 'range'
+    | 'reset'
+    | 'search'
+    | 'submit'
+    | 'tel'
+    | 'text'
+    | 'time'
+    | 'url'
+    | 'week';
+
 export interface FlInputArgs {
     value: any;
     placeholder?: string;
@@ -16,7 +40,7 @@ export interface FlInputArgs {
     inset?: boolean;
     id?: string;
     name?: string;
-    type?: string;
+    type?: HTMLInputType;
     errors?: string[];
 }
 
@@ -66,7 +90,7 @@ export default class FlInput<T extends FlInputArgs> extends Component<T> {
         return this.firstError ?? this.args.placeholder;
     }
 
-    get type(): string {
+    get type(): HTMLInputType {
         return this.args.type ?? 'text';
     }
 
