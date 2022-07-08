@@ -1,13 +1,13 @@
-import Controller from '@ember/controller';
 import { A } from '@ember/array';
-import { tracked } from '@glimmer/tracking';
+import Controller from '@ember/controller';
 import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 export default class SelectController extends Controller {
-    @tracked selectLgValue;
-    @tracked selectInlineValue;
-    @tracked selectBlockValue;
-    @tracked errors = [];
+    @tracked selectLgValue?: string;
+    @tracked selectInlineValue?: string;
+    @tracked selectBlockValue?: string;
+    @tracked errors: string[] = [];
 
     inlineSelectOptions = A([
         { value: 'a', label: 'Apples' },
@@ -22,17 +22,17 @@ export default class SelectController extends Controller {
     ]);
 
     @action
-    onSelectInlineValue(value) {
+    onSelectInlineValue(value: string) {
         this.selectInlineValue = value;
     }
 
     @action
-    onSelectLgValue(value) {
+    onSelectLgValue(value: string) {
         this.selectInlineValue = value;
     }
 
     @action
-    onSelectBlockValue(value) {
+    onSelectBlockValue(value: string) {
         this.selectInlineValue = value;
     }
 
