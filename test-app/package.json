@@ -23,7 +23,7 @@
         "test:ember": "ember test"
     },
     "dependencies": {
-        "@gavant/ember-floating-labels": "2.1.1"
+        "@gavant/ember-floating-labels": "2.1.2"
     },
     "devDependencies": {
         "@ember/optional-features": "^2.0.0",
@@ -33,6 +33,8 @@
         "@embroider/core": "^1.8.3",
         "@embroider/test-setup": "^1.7.1",
         "@embroider/webpack": "^1.8.3",
+        "@fortawesome/ember-fontawesome": "^0.4.0",
+        "@fortawesome/free-solid-svg-icons": "^6.1.1",
         "@glimmer/component": "^1.1.2",
         "@glimmer/tracking": "^1.1.2",
         "@types/ember-qunit": "^5.0.0",
@@ -63,6 +65,7 @@
         "babel-eslint": "^10.1.0",
         "bootstrap": "5.1.3",
         "broccoli-asset-rev": "^3.0.0",
+        "ember-a11y-testing": "^5.0.0",
         "ember-auto-import": "^2.4.1",
         "ember-cli": "~4.4.0",
         "ember-cli-app-version": "^5.0.0",
@@ -80,7 +83,6 @@
         "ember-export-application-global": "^2.0.1",
         "ember-fetch": "^8.1.1",
         "ember-load-initializers": "^2.1.2",
-        "ember-modal-dialog": "^4.0.0",
         "ember-page-title": "^7.0.0",
         "ember-qunit": "^5.1.5",
         "ember-resolver": "^8.0.3",

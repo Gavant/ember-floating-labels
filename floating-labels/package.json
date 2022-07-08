@@ -1,6 +1,6 @@
 {
   "name": "@gavant/ember-floating-labels",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Animated floating placeholder form labels for Ember apps",
   "keywords": [
     "ember-addon",
@@ -72,7 +72,6 @@
     "@typescript-eslint/eslint-plugin": "^5.18.0",
     "@typescript-eslint/parser": "^5.18.0",
     "babel-eslint": "^10.1.0",
-    "ember-modal-dialog": "^4.0.0",
     "ember-template-lint": "^4.3.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.5.0",
