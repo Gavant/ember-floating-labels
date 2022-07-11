@@ -1,3 +1,12 @@
+
+## v3.0.0 (2022-07-11)
+
+#### :boom: Breaking Change
+* [#41](https://github.com/Gavant/ember-floating-labels/pull/41) Work on v2 conversion ([@bakerac4](https://github.com/bakerac4))
+
+#### Committers: 1
+- Adam Baker ([@bakerac4](https://github.com/bakerac4))
+
 ### Changelog
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.

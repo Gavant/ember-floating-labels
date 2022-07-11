@@ -1,6 +1,6 @@
 {
     "name": "test-app",
-    "version": "2.1.1",
+    "version": "3.0.0",
     "private": true,
     "description": "Small description for test-app goes here",
     "repository": "",
@@ -23,7 +23,7 @@
         "test:ember": "ember test"
     },
     "dependencies": {
-        "@gavant/ember-floating-labels": "2.1.2"
+        "@gavant/ember-floating-labels": "3.0.0"
     },
     "devDependencies": {
         "@ember/optional-features": "^2.0.0",
