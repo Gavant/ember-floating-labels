@@ -1,3 +1,12 @@
+
+## v3.0.1 (2022-07-11)
+
+#### :bug: Bug Fix
+* [#42](https://github.com/Gavant/ember-floating-labels/pull/42) Fixing component type locations ([@bakerac4](https://github.com/bakerac4))
+
+#### Committers: 1
+- Adam Baker ([@bakerac4](https://github.com/bakerac4))
+
 ## v3.0.0 (2022-07-11)
 
 #### :boom: Breaking Change
