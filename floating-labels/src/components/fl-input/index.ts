@@ -44,7 +44,21 @@ export interface FlInputArgs {
     errors?: string[];
 }
 
-export default class FlInput<T extends FlInputArgs> extends Component<T> {
+interface BaseSignature {
+    Args: FlInputArgs;
+    Element?: HTMLElement;
+    Blocks: {
+        default?: [];
+    };
+}
+
+export interface FLInputSignature {
+    Args: FlInputArgs;
+    Element: HTMLInputElement;
+    Blocks: { default: [] };
+}
+
+export default class FlInput<T extends BaseSignature> extends Component<T> {
     @tracked hasFocus: boolean = false;
 
     /**

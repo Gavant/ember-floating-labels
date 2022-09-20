@@ -11,7 +11,15 @@ export interface FlSelectArgs extends FlInputArgs {
     onChange: (value: any) => void;
 }
 
-export default class FlSelect extends FlInput<FlSelectArgs> {
+interface FlSelectSignature {
+    Args: FlSelectArgs;
+    Element: HTMLSelectElement;
+    Blocks: {
+        default?: [];
+    };
+}
+
+export default class FlSelect extends FlInput<FlSelectSignature> {
     /**
      * The object property path to use as the select `<option>` value attribute
      */

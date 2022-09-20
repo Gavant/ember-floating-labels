@@ -38,7 +38,7 @@
     "tests/**/*",
     "types/**/*"
  ],
- "references": [
-    { "path": "../floating-labels" }
- ]
+ "glint": {
+    "environment": "ember-loose",
+   }
 }
