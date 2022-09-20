@@ -2,4 +2,12 @@ import FlInput, { FlInputArgs } from '../fl-input';
 
 export interface FlTextareaArgs extends FlInputArgs {}
 
-export default class FlTextarea extends FlInput<FlTextareaArgs> {}
+interface FlTextAreaSignature {
+    Args: FlTextareaArgs;
+    Element?: HTMLTextAreaElement;
+    Blocks: {
+        default?: [];
+    };
+}
+
+export default class FlTextarea extends FlInput<FlTextAreaSignature> {}
