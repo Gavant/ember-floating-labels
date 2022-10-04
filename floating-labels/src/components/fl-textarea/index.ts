@@ -4,7 +4,7 @@ export interface FlTextareaArgs extends FlInputArgs {}
 
 interface FlTextAreaSignature {
     Args: FlTextareaArgs;
-    Element?: HTMLTextAreaElement;
+    Element: HTMLTextAreaElement;
     Blocks: {
         default?: [];
     };
