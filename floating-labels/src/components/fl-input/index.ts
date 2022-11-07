@@ -32,8 +32,8 @@ export type HTMLInputType =
     | 'url'
     | 'week';
 
-export interface FlInputArgs {
-    value: any;
+export interface FlInputArgs<V> {
+    value?: V | null;
     placeholder?: string;
     containerClass?: string;
     inputBaseClass?: string;
@@ -44,21 +44,20 @@ export interface FlInputArgs {
     errors?: string[];
 }
 
-interface BaseSignature {
-    Args: FlInputArgs;
-    Element?: HTMLElement;
-    Blocks: {
-        default?: [];
-    };
+interface BaseFloatingSignature<V> {
+    Args: FlInputArgs<V>;
+    Element?: unknown;
+    Blocks: unknown;
 }
 
-export interface FLInputSignature {
-    Args: FlInputArgs;
-    Element: HTMLInputElement;
-    Blocks: { default: [] };
-}
-
-export default class FlInput<T extends BaseSignature> extends Component<T> {
+// export interface FloatingLabel<Signature = unknown> {}
+declare const __Signature__: unique symbol;
+export abstract class BaseFloatingLabelClass<
+    Signature extends BaseFloatingSignature<V>,
+    V
+> extends Component<Signature> {
+    // implements FloatingLabel<Signature>
+    declare [__Signature__]: Signature;
     @tracked hasFocus: boolean = false;
 
     /**
@@ -148,3 +147,9 @@ export default class FlInput<T extends BaseSignature> extends Component<T> {
         return isEmpty(value);
     }
 }
+export interface FLInputSignature<V> extends BaseFloatingSignature<V> {
+    Args: FlInputArgs<V>;
+    Element: HTMLInputElement;
+    Blocks: { default: [] };
+}
+export default class FlInput<V> extends BaseFloatingLabelClass<FLInputSignature<V>, V> {}

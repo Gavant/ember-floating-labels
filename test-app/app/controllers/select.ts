@@ -3,6 +3,10 @@ import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 
+interface InlineSelectOptions {
+    value: string;
+    label: string;
+}
 export default class SelectController extends Controller {
     @tracked selectLgValue?: string;
     @tracked selectInlineValue?: string;
