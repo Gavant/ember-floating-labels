@@ -2,9 +2,8 @@ import { action } from '@ember/object';
 
 import { BaseFloatingLabelClass, FlInputArgs } from '../fl-input';
 
-// type ValuePath<T> = T extends { valuePath: infer S } ? (S extends string ? S : never) : never;
 type ArrayMemberType<T> = T extends Array<infer U> ? U : never;
-// O = { value: string; label: string; }
+
 export interface FlSelectArgs<
     OA extends Array<object> | undefined,
     O extends ArrayMemberType<OA>,
