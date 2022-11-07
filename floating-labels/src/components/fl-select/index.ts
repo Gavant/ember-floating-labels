@@ -1,37 +1,61 @@
 import { action } from '@ember/object';
 
-import FlInput, { FlInputArgs } from '../fl-input';
+import { BaseFloatingLabelClass, FlInputArgs } from '../fl-input';
 
-export interface FlSelectArgs extends FlInputArgs {
-    options: Array<Record<string, unknown>>;
-    valuePath?: string;
-    labelPath?: string;
+type ArrayMemberType<T> = T extends Array<infer U> ? U : never;
+
+export interface FlSelectArgs<
+    OA extends Array<object> | undefined,
+    O extends ArrayMemberType<OA>,
+    P extends keyof O,
+    V extends O[P]
+> extends FlInputArgs<V> {
+    options?: OA;
+    /**
+     * The types here are inferred correctly if options is passed. If not, we set it to any. This is for the block usage of the component when you render the options yourself.
+     *
+     * @type {(OA extends undefined ? any : V | null)}
+     * @memberof FlSelectArgs
+     */
+    value?: OA extends undefined ? any : V | null;
+    valuePath?: P;
+    labelPath?: keyof O;
     emptyOptionText?: string;
     allowClear?: boolean;
     onChange: (value: any) => void;
 }
 
-interface FlSelectSignature {
-    Args: FlSelectArgs;
+interface FlSelectSignature<
+    OA extends Array<object> | undefined,
+    O extends ArrayMemberType<OA>,
+    P extends keyof O,
+    V extends O[P]
+> {
+    Args: FlSelectArgs<OA, O, P, V>;
     Element: HTMLSelectElement;
     Blocks: {
         default?: [];
     };
 }
 
-export default class FlSelect extends FlInput<FlSelectSignature> {
+export default class FlSelect<
+    OA extends Array<object> | undefined,
+    O extends ArrayMemberType<OA>,
+    P extends keyof O,
+    V extends O[P]
+> extends BaseFloatingLabelClass<FlSelectSignature<OA, O, P, V>, V> {
     /**
      * The object property path to use as the select `<option>` value attribute
      */
-    get valuePath(): string {
-        return this.args.valuePath || 'value';
+    get valuePath(): keyof O {
+        return this.args.valuePath || ('value' as P);
     }
 
     /**
      * The object property path to use as the select `<option>` label
      */
-    get labelPath(): string {
-        return this.args.labelPath || 'label';
+    get labelPath(): keyof O {
+        return this.args.labelPath || ('label' as keyof O);
     }
 
     /**

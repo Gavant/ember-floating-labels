@@ -4,6 +4,7 @@ import { tracked } from '@glimmer/tracking';
 
 export default class TextController extends Controller {
     @tracked errors: string[] = [];
+    @tracked inputInlineValue = '';
 
     @action
     onFocusIn(event: FocusEvent) {
