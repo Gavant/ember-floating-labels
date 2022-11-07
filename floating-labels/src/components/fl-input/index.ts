@@ -50,14 +50,10 @@ interface BaseFloatingSignature<V> {
     Blocks: unknown;
 }
 
-// export interface FloatingLabel<Signature = unknown> {}
-declare const __Signature__: unique symbol;
 export abstract class BaseFloatingLabelClass<
     Signature extends BaseFloatingSignature<V>,
     V
 > extends Component<Signature> {
-    // implements FloatingLabel<Signature>
-    declare [__Signature__]: Signature;
     @tracked hasFocus: boolean = false;
 
     /**
