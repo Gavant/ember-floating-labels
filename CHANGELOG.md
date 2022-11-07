@@ -1,4 +1,13 @@
 
+
+## v3.1.0 (2022-11-07)
+
+#### :rocket: Enhancement
+* [#47](https://github.com/Gavant/ember-floating-labels/pull/47) Type value ([@bakerac4](https://github.com/bakerac4))
+
+#### Committers: 1
+- Adam Baker ([@bakerac4](https://github.com/bakerac4))
+
 ## v3.0.3 (2022-10-04)
 
 ## v3.0.2 (2022-09-20)
