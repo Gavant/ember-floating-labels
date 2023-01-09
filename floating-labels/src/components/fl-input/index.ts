@@ -41,7 +41,7 @@ export interface FlInputArgs<V> {
     id?: string;
     name?: string;
     type?: HTMLInputType;
-    errors?: string[];
+    errors?: string[] | string;
 }
 
 interface BaseFloatingSignature<V> {
@@ -92,7 +92,11 @@ export abstract class BaseFloatingLabelClass<
     }
 
     get firstError(): string | null {
-        return Array.isArray(this.args.errors) ? this.args.errors[0] : null;
+        return Array.isArray(this.args.errors)
+            ? this.args.errors[0]
+            : typeof this.args.errors === 'string'
+            ? this.args.errors
+            : null;
     }
 
     get placeholder(): string | undefined {
