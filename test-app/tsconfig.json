@@ -38,6 +38,7 @@
     "tests/**/*",
     "types/**/*"
  ],
+ "types": [],
  "glint": {
     "environment": "ember-loose",
    }
