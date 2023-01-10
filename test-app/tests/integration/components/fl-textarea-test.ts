@@ -15,6 +15,6 @@ module('Integration | Component | fl-textarea', function (hooks) {
 
         await render(hbs`<FlTextarea @placeholder="test" />`);
         await a11yAudit();
-        assert.strictEqual(this.element.textContent?.trim(), 'test');
+        assert.dom().hasText('test');
     });
 });

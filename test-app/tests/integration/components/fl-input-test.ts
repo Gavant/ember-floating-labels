@@ -12,13 +12,32 @@ module('Integration | Component | fl-input', function (hooks) {
     test('it renders', async function (assert) {
         await render(hbs`<FlInput @placeholder="test"/>`);
         await a11yAudit();
-        assert.strictEqual(this.element.textContent?.trim(), 'test');
+        assert.dom().hasText('test');
     });
 
     test('Type attribute is set on the <input> when using <FlInput />', async function (assert) {
         await render(hbs`<FlInput @placeholder="password" @type="password"/>`);
         await a11yAudit();
-        const inputElement = this.element.querySelector('input') as HTMLInputElement;
-        assert.strictEqual(inputElement.type, 'password');
+        assert.dom('input').hasAttribute('type', 'password');
+    });
+
+    test('Single error works', async function (assert) {
+        await render(hbs`<FlInput @placeholder="password" @type="password" @errors="test"/>`);
+        await a11yAudit();
+        assert.dom().hasText('test');
+    });
+
+    test('Array error works', async function (assert) {
+        this.set('errors', ['test', 'test2']);
+        await render(hbs`<FlInput @placeholder="password" @type="password" @errors={{this.errors}}/>`);
+        await a11yAudit();
+        assert.dom().hasText('test');
+    });
+
+    test('Array of Arrays error works', async function (assert) {
+        this.set('errors', [['test', 'test2']]);
+        await render(hbs`<FlInput @placeholder="password" @type="password" @errors={{this.errors}}/>`);
+        await a11yAudit();
+        assert.dom().hasText('test');
     });
 });

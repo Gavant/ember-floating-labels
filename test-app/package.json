@@ -28,7 +28,7 @@
     "devDependencies": {
         "@ember/optional-features": "^2.0.0",
         "@ember/render-modifiers": "^2.0.4",
-        "@ember/test-helpers": "^2.9.1",
+        "@ember/test-helpers": "^2.9.3",
         "@embroider/compat": "^1.8.3",
         "@embroider/core": "^1.8.3",
         "@embroider/test-setup": "^1.7.1",
@@ -39,7 +39,6 @@
         "@glimmer/tracking": "^1.1.2",
         "@glint/core": "^0.9.2",
         "@glint/environment-ember-loose": "^0.9.2",
-        "@types/ember-qunit": "^6.1.1",
         "@types/ember-resolver": "^5.0.11",
         "@types/ember__application": "^4.0.0",
         "@types/ember__array": "^4.0.1",
